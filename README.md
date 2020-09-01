@@ -44,10 +44,9 @@ Assume the structure of data directories is the following:
 ~/
   data/
     UCF-jpg/
-      jpg/
-        .../ (directories of class names)
-          .../ (directories of video names)
-            ... (jpg files)
+      .../ (directories of class names)
+        .../ (directories of video names)
+          ... (jpg files)
     results/
       val.json
     UCF_annotation/
