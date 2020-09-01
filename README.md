@@ -57,10 +57,6 @@ Assume the structure of data directories is the following:
 Confirm all options.
 
 ```bash
-python main.py -h
-```
-
-```bash
 python main.py --root_path ~/ --video_path data/UCF-jpg --annotation_path data/UCF_json/ucf101_01.json \
 --result_path results --dataset ucf101 --model resnet --n_pretrain_classes 1039 \
 --pretrain_path data/data49559/pretrain --model_depth 50 --n_classes 101 --batch_size 128 \
@@ -72,6 +68,6 @@ Evaluate top-1 video accuracy of a recognition result (~/results/val.json).
 
 ```bash
 # 计算top1 accuracy
-!python -m util_scripts.eval_accuracy --ground_truth_path data/UCF_json/ucf101_01.json \
+python -m util_scripts.eval_accuracy --ground_truth_path data/UCF_json/ucf101_01.json \
 --result_path results/val_random.json --subset validation --k 1 --ignore --save
 ```
