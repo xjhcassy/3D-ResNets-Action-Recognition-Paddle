@@ -1,11 +1,3 @@
-import random
-from PIL import Image
-import numbers
-import numpy as np
-from collections.abc import Sequence, Iterable
-import warnings
-import math
-
 class Compose(object):
     """Composes several transforms together.
     Args:
@@ -14,13 +6,11 @@ class Compose(object):
         # >>> transforms.Compose([
         # >>>     transforms.CenterCrop(10),
         # >>>     transforms.Normalize(),
-        # >>> ])
+       # >>> ])
     """
 
     def __init__(self, transforms):
         self.transforms = transforms
-
-    def __call__(self, img):
         for t in self.transforms:
             img = t(img)
         return img
@@ -353,13 +343,5 @@ class RandomResizedCrop(object):
     def randomize_parameters(self):
         self.randomize = True
 
-class PickFirstChannels(object):
 
-    def __init__(self, n):
-        self.n = n
 
-    def __call__(self, tensor):
-        return tensor[:self.n, :, :]
-
-    def randomize_parameters(self):
-        pass
