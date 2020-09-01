@@ -18,6 +18,13 @@ python -m pip install paddlepaddle-gpu==1.8.3.post97 -i https://mirror.baidu.com
 
 * Python 3
 
+## Pre-trained models
+
+Pre-trained models are available [here](https://drive.google.com/open?id=1xbYbZ7rpyjftI_KCk6YuL-XrfQDz7Yd4).  
+
+```misc
+pretrain.pdparams: --model resnet --model_depth 50 --n_pretrain_classes 1039
+```
 ## Preparation
 
 ### UCF-101
@@ -47,10 +54,10 @@ Assume the structure of data directories is the following:
       .../ (directories of class names)
         .../ (directories of video names)
           ... (jpg files)
-    results/
-      val.json
     UCF_annotation/
       ucf101_01.json
+results/
+   val.json
 ```
 
 Confirm all options.
@@ -58,7 +65,7 @@ Confirm all options.
 ```bash
 python main.py --root_path ~/ --video_path data/UCF-jpg --annotation_path data/UCF_json/ucf101_01.json \
 --result_path results --dataset ucf101 --model resnet --n_pretrain_classes 1039 \
---pretrain_path data/data49559/pretrain --model_depth 50 --n_classes 101 --batch_size 128 \
+--pretrain_path data/pretrain --model_depth 50 --n_classes 101 --batch_size 128 \
 --checkpoint 5 --n_epochs 20 --learning_rate 0.003 --train_crop 'random' --lr_scheduler multistep\
 --inference --inference_batch_size 1
 ```
