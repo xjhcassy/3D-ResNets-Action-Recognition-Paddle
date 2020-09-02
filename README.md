@@ -20,7 +20,7 @@ python -m pip install paddlepaddle-gpu==1.8.3.post97 -i https://mirror.baidu.com
 
 ## Pre-trained models
 
-Pre-trained models are available [here](https://drive.google.com/open?id=1xbYbZ7rpyjftI_KCk6YuL-XrfQDz7Yd4).  
+Pre-trained models are available [here](https://drive.google.com/file/d/1CmLeDqCGs52Ev2GWkoTKvvJ6TQfgsQdc/view).  
 
 ```misc
 pretrain.pdparams: --model resnet --model_depth 50 --n_pretrain_classes 1039
